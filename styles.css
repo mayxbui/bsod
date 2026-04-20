@@ -1,0 +1,452 @@
+/* ─── Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --blue-accent: #3a7bd5;
+  --blue-dark: #1a4a8c;
+  --green-ok: #4ade80;
+  --yellow-warn: #facc15;
+  --term-green: #00ff41;
+  --term-green-dim: #005c17;
+  --term-green-mid: #00b32c;
+  --bsod-blue: #0840c8;
+  --font-mono: 'Lucida Console', 'Courier New', 'Courier', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-mono);
+  background: #000;
+  color: #c8c8c8;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── Accessibility ─────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  background: var(--blue-accent);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  z-index: 9999;
+  transition: top 0.2s;
+  font-family: var(--font-mono);
+}
+.skip-link:focus { top: 8px; }
+
+/* ─── Boot Screen ───────────────────────────────────── */
+.boot-screen {
+  min-height: 100vh;
+  padding: 2rem 0 6rem;
+}
+
+.boot-os-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.boot-os-sub {
+  color: #555;
+  font-size: 11px;
+}
+
+/* ─── Progress Bar ──────────────────────────────────── */
+.progress-track {
+  height: 20px;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue-accent));
+  transition: width 0.25s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  background: rgba(255,255,255,0.15);
+  filter: blur(4px);
+}
+
+/* ─── Divider ───────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid #1c1c1c;
+}
+
+/* ─── Boot Sections ─────────────────────────────────── */
+.boot-section {
+  margin-bottom: 1.75rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.boot-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-tag {
+  color: #3a7bd5;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-body {
+  color: #c8c8c8;
+  padding-left: 0.5rem;
+  border-left: 1px solid #1e1e1e;
+}
+
+/* ─── Status Indicator ──────────────────────────────── */
+.status-ok {
+  color: var(--green-ok);
+  animation: pulse-ok 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-ok {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ─── Tags ──────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  background: #0d1f35;
+  color: #5ba3f5;
+  border: 1px solid #1a3a5c;
+  border-radius: 2px;
+  padding: 1px 8px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* ─── Glitch Links ──────────────────────────────────── */
+.glitch-link {
+  background: none;
+  border: none;
+  color: #f59e0b;
+  font-family: var(--font-mono);
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  padding: 0;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.glitch-link:hover {
+  color: #fcd34d;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+.glitch-link:hover::before {
+  content: attr(data-cmd);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #333;
+  color: #888;
+  font-size: 10px;
+  padding: 2px 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glitch-link:focus-visible {
+  outline: 1px solid var(--blue-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ─── Scroll Indicator ──────────────────────────────── */
+.scroll-indicator {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.scroll-indicator.hidden-indicator {
+  opacity: 0;
+}
+
+.scroll-arrow {
+  color: #333;
+  font-size: 14px;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.scroll-text {
+  color: #2a2a2a;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ─── BSOD ──────────────────────────────────────────── */
+.bsod {
+  position: fixed;
+  inset: 0;
+  background: var(--bsod-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 10vh 5vw;
+  animation: bsod-in 0.15s ease;
+}
+
+@keyframes bsod-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bsod-header {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.bsod-title {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+.bsod-progress-wrap {
+  background: #fff;
+  height: 6px;
+  width: 240px;
+  border-radius: 3px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bsod-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--bsod-blue);
+  transition: width 0.1s linear;
+}
+
+.bsod-progress-pct {
+  position: absolute;
+  right: 0;
+  top: -18px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+}
+
+.bsod-body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  line-height: 1.9;
+}
+
+.bsod-dump {
+  background: rgba(0,0,0,0.15);
+  border-left: 2px solid rgba(255,255,255,0.2);
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 11px;
+}
+
+.bsod-close {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 24px;
+  display: block;
+  transition: all 0.2s;
+}
+
+.bsod-close:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-color: #fff;
+}
+
+.bsod-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ─── Terminal ──────────────────────────────────────── */
+.terminal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.97);
+  z-index: 900;
+  overflow-y: auto;
+  animation: term-in 0.2s ease;
+}
+
+@keyframes term-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.term-titlebar {
+  display: flex;
+  align-items: center;
+}
+
+.term-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.term-dot-red { background: #ff5f57; }
+.term-dot-yellow { background: #febc2e; }
+.term-dot-green { background: #28c840; }
+
+.term-title {
+  color: #555;
+  font-size: 12px;
+}
+
+.term-close-btn {
+  background: none;
+  border: 1px solid #222;
+  color: #444;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.term-close-btn:hover { color: #888; border-color: #444; }
+.term-close-btn:focus-visible { outline: 1px solid #555; outline-offset: 2px; }
+
+.term-output {
+  color: var(--term-green);
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 300px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 12px;
+}
+
+.term-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #111;
+  padding-top: 10px;
+}
+
+.term-prompt {
+  color: var(--term-green-mid);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.term-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--term-green);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex: 1;
+  caret-color: var(--term-green);
+  min-width: 0;
+}
+
+.term-input::placeholder { color: #1a3a1a; }
+
+/* ─── Terminal text styles ──────────────────────────── */
+.t-dim { color: var(--term-green-dim); }
+.t-mid { color: var(--term-green-mid); }
+.t-bright { color: #fff; font-weight: bold; }
+.t-blue { color: #5ba3f5; }
+.t-yellow { color: #facc15; }
+.t-red { color: #f87171; }
+.t-prompt { color: var(--term-green-mid); }
+
+/* ─── Lolcat ────────────────────────────────────────── */
+.lolcat-char { display: inline; }
+
+/* ─── Hidden utility ────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ─── Scanline effect (subtle, optional) ───────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── Cursor blink ──────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 640px) {
+  body { font-size: 12px; }
+  .bsod-header { font-size: 56px; }
+  .bsod-title { font-size: 14px; }
+  .boot-screen { padding: 1rem 0 4rem; }
+}

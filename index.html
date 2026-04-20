@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>May Bui — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-black text-gray-300 min-h-screen">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════
+       BOOT SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="boot-screen" class="boot-screen" role="main" aria-label="Portfolio boot sequence">
+    <div id="main-content" class="boot-inner max-w-3xl mx-auto px-6 py-8">
+
+      <!-- Windows header -->
+      <div class="mb-6">
+        <div class="boot-os-title">Microsoft Windows [Version 6.1.7601]</div>
+        <div class="boot-os-sub">Copyright (c) 2009 Microsoft Corporation. All rights reserved.</div>
+        <div class="boot-os-sub mt-1">Portfolio Edition — <span class="text-blue-400">May Bui</span></div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-track mb-2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="flex justify-between text-xs text-gray-600 mb-6">
+        <span id="progress-label">Loading portfolio...</span>
+        <span id="progress-pct">0%</span>
+      </div>
+
+      <div class="divider mb-6"></div>
+
+      <!-- SECTION 0 — Identity -->
+      <section class="boot-section" id="s0" aria-label="Identity">
+        <div class="section-tag">// system.identity</div>
+        <div class="section-body">
+          <p>Operator: <button class="glitch-link" data-cmd="whoami" aria-label="Open terminal: whoami">May Bui</button></p>
+          <p>Role: <span class="text-white font-semibold">Full-Stack Developer &amp; CS + Business Analytics Student</span></p>
+          <p>Location: <span class="text-white">Greencastle, IN · Originally Bay Area, CA</span></p>
+          <p>Status: <span class="status-ok">● AVAILABLE FOR HIRE</span></p>
+          <p class="mt-2 text-gray-500 text-xs">↳ <button class="glitch-link text-xs" data-cmd="open resume" aria-label="open resume.pdf">open resume.pdf</button></p>
+        </div>
+      </section>
+
+      <!-- SECTION 1 — Education -->
+      <section class="boot-section" id="s1" aria-label="Education">
+        <div class="section-tag">// system.education</div>
+        <div class="section-body">
+          <p><span class="text-blue-400">DePauw University</span> <span class="text-gray-600 text-xs">— Greencastle, IN</span></p>
+          <p class="text-white text-xs ml-4">B.A. Computer Science · B.A. Business Analytics</p>
+          <p class="text-gray-500 text-xs ml-4">August 2023 – May 2027 · Management Fellows · Dean's List</p>
+          <p class="text-gray-600 text-xs ml-4 mt-1">Coursework: Data Structures, OOP, Algorithms, Databases, Web Dev, Statistical Modeling</p>
+        </div>
+      </section>
+
+      <!-- SECTION 2 — Stack -->
+      <section class="boot-section" id="s2" aria-label="Tech stack">
+        <div class="section-tag">// modules.loaded</div>
+        <div class="section-body">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Tableau</span>
+          </div>
+          <p class="text-yellow-500 text-xs">WARNING: <button class="glitch-link text-yellow-400 text-xs" data-cmd="ls node_modules" aria-label="Open terminal: ls node_modules">too_many_side_projects.exe</button> detected in memory heap</p>
+        </div>
+      </section>
+
+      <!-- SECTION 3 — Experience -->
+      <section class="boot-section" id="s3" aria-label="Work experience">
+        <div class="section-tag">// process.log — experience</div>
+        <div class="section-body space-y-2">
+          <div>
+            <span class="text-blue-400">[Jun–Aug 2025]</span>
+            <span class="text-white ml-2">Lead Instructor @ iDTech Stanford</span>
+            <p class="text-gray-500 text-xs ml-6 mt-0.5">Led game dev for 90+ campers · 95% satisfaction rate · Palo Alto, CA</p>
+          </div>
+          <div>
+            <span class="text-blue-400">[Oct 2024–Dec 2025]</span>
+            <span class="text-white ml-2">Vice President @ ACM-W DePauw</span>
+            <p class="text-gray-500 text-xs ml-6 mt-0.5">Moderated panel with DePauw CIO &amp; VP/Dean of WGU · 50+ attendees</p>
+          </div>
+          <div>
+            <span class="text-blue-400">[Jan 2025–Present]</span>
+            <span class="text-white ml-2">STEM Guide @ DePauw CS Department</span>
+            <p class="text-gray-500 text-xs ml-6 mt-0.5">Tutored 40+ students · 85% improved comprehension · 15% exam score lift</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 — Projects -->
+      <section class="boot-section" id="s4" aria-label="Projects">
+        <div class="section-tag">// featured.processes</div>
+        <div class="section-body space-y-1.5">
+          <p>
+            <button class="glitch-link" data-cmd="cat project1" aria-label="Open terminal: view project one">► local-business-portal.exe</button>
+            <span class="text-gray-500 ml-2">React + Firebase · 70+ redemptions · 21 businesses</span>
+          </p>
+          <p>
+            <button class="glitch-link" data-cmd="cat project2" aria-label="Open terminal: view project two">► college-selection-tool.exe</button>
+            <span class="text-gray-500 ml-2">Tableau · 1,200+ universities analyzed</span>
+          </p>
+          <p>
+            <button class="glitch-link" data-cmd="cat project3" aria-label="Open terminal: view project three">► joystick-arcade-bar.exe</button>
+            <span class="text-gray-500 ml-2">Pitch competition runner-up · $437K+ revenue model</span>
+          </p>
+          <p>
+            <button class="glitch-link" data-cmd="ls projects" aria-label="Open terminal: list all projects">► [more projects...]</button>
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 5 — Contact -->
+      <section class="boot-section" id="s5" aria-label="Contact">
+        <div class="section-tag">// contact.handshake</div>
+        <div class="section-body space-y-1">
+          <p>github.com/<a href="https://github.com/mayxbui" target="_blank" rel="noopener" class="text-white hover:text-blue-400 transition-colors">mayxbui</a></p>
+          <p>linkedin.com/in/<a href="https://linkedin.com/in/mayxbui" target="_blank" rel="noopener" class="text-white hover:text-blue-400 transition-colors">mayxbui</a></p>
+          <p>portfolio: <a href="https://may.vercel.app" target="_blank" rel="noopener" class="text-white hover:text-blue-400 transition-colors">may.vercel.app</a></p>
+          <p><button class="glitch-link" data-cmd="send email" aria-label="Open terminal: send email">mayxbui@gmail.com</button></p>
+        </div>
+      </section>
+
+      <!-- SECTION 6 — Boot complete -->
+      <section class="boot-section" id="s6" aria-label="Boot complete">
+        <div class="divider mb-4"></div>
+        <p class="text-gray-600 text-xs">
+          BOOT COMPLETE —
+          <span class="text-blue-400">All modules loaded successfully.</span>
+        </p>
+        <p class="text-gray-700 text-xs mt-1">
+          Hint: try the <button class="text-gray-700 hover:text-gray-500 transition-colors text-xs" id="konami-hint-btn" aria-label="Reveal konami code hint">Konami code</button> ·
+          or click any <span class="text-yellow-600">highlighted text</span> to open terminal ·
+          or type <button class="glitch-link text-gray-700 hover:text-gray-500 text-xs" data-cmd="help" aria-label="Open terminal: help">help</button>
+        </p>
+        <p id="konami-reveal" class="text-gray-600 text-xs mt-1 hidden">↑ ↑ ↓ ↓ ← → ← → B A</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BSOD OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div id="bsod" class="bsod hidden" role="dialog" aria-modal="true" aria-label="Blue screen of death easter egg">
+    <div class="bsod-inner max-w-2xl">
+      <div class="bsod-header">:(</div>
+      <div class="bsod-title">
+        Your portfolio ran into a problem and needs to restart.<br>
+        We're just collecting some error info, and then we'll restart for you.
+      </div>
+      <div class="bsod-progress-wrap">
+        <div class="bsod-progress-fill" id="bsod-progress"></div>
+        <span id="bsod-pct" class="bsod-progress-pct">0%</span>
+      </div>
+      <div class="bsod-body">
+        <p class="mb-4">For more information about this error, visit: <span class="text-white">hire-this-dev.com/exception</span></p>
+        <p class="mb-2">Stop code: <span class="text-white font-bold">TOO_MANY_SKILLS_FOR_ONE_PERSON</span></p>
+        <div class="bsod-dump">
+          <p class="text-gray-400 mb-2">*** crash dump — loaded modules at time of exception:</p>
+          <p><span class="text-white">react.dll</span>             — performing nominal</p>
+          <p><span class="text-white">typescript.dll</span>        — excessive type safety detected</p>
+          <p><span class="text-white">firebase.dll</span>          — 21 businesses connected, still running</p>
+          <p><span class="text-white">tableau.exe</span>           — 1,200+ universities analyzed, still hungry</p>
+          <p><span class="text-white">node_modules/</span>         — 847,293 items (this is fine)</p>
+          <p><span class="text-white">management_fellows.sys</span> — elite cohort detected</p>
+          <p><span class="text-white">deans_list.exe</span>        — consistently overperforming</p>
+          <p><span class="text-white">coffee.exe</span>            — CRITICALLY LOW, recommend immediate refill</p>
+          <p><span class="text-white">imposter_syndrome.sys</span> — loaded but suppressed</p>
+          <p><span class="text-white">curiosity.overflow</span>    — EXCEPTION at 0x0000CAFE</p>
+          <p><span class="text-white">hire_me.exe</span>           — ready to execute</p>
+        </div>
+        <p class="mt-4 text-gray-500 text-xs">If you'd like to know more: <span class="text-white">mayxbui@gmail.com · 408-303-8262</span></p>
+      </div>
+      <button class="bsod-close" id="bsod-close" aria-label="Close BSOD and return to portfolio">[ Press ESC or click here to restart portfolio ]</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TERMINAL OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div id="terminal" class="terminal hidden" role="dialog" aria-modal="true" aria-label="Portfolio terminal">
+    <div class="terminal-inner max-w-3xl mx-auto px-6 py-6">
+      <div class="flex items-center justify-between mb-4">
+        <div class="term-titlebar">
+          <span class="term-dot term-dot-red"></span>
+          <span class="term-dot term-dot-yellow"></span>
+          <span class="term-dot term-dot-green"></span>
+          <span class="term-title ml-3">terminal — bash — may@portfolio</span>
+        </div>
+        <button class="term-close-btn" id="term-close" aria-label="Close terminal">✕ close</button>
+      </div>
+      <div id="term-output" class="term-output" aria-live="polite" aria-label="Terminal output"></div>
+      <div class="term-input-row">
+        <span class="term-prompt" aria-hidden="true">may@portfolio:~$</span>
+        <input
+          id="term-input"
+          class="term-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Terminal command input"
+          placeholder="type a command..."
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+    <span class="scroll-arrow">▼</span>
+    <span class="scroll-text">scroll to load</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
