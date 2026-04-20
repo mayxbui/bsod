@@ -1,7 +1,4 @@
-# May Bui — Portfolio
-
-A Windows-themed developer portfolio with a boot sequence, interactive terminal, and hidden easter eggs.
-
+# May Bui Portfolio
 **Live site:** [may.vercel.app](https://may.vercel.app)
 
 ---
@@ -31,7 +28,6 @@ Type any command and press `Enter`:
 | `send email` | Contact information |
 | `sudo hire me` | Recommended !! |
 | `ls node_modules` | Don't |
-| `play music` | 🎵 |
 | `lolcat` | 🌈 |
 | `date` | Current date/time |
 | `uname -a` | System info |

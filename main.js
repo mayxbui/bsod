@@ -96,12 +96,11 @@ const COMMANDS = {
   <span class="t-bright">whoami</span>           — who is May Bui
   <span class="t-bright">neofetch</span>         — system info
   <span class="t-bright">ls projects</span>      — list all projects
-  <span class="t-bright">cat project1</span>     — Local Business Portal
-  <span class="t-bright">cat project2</span>     — College Selection Tool
-  <span class="t-bright">cat project3</span>     — JoyStick Arcade & Bar
+  <span class="t-bright">cat project-business</span>     — Local Business Portal
+  <span class="t-bright">cat project-college</span>     — College Selection Tool
+  <span class="t-bright">cat project-joystick</span>     — JoyStick Arcade & Bar
   <span class="t-bright">open resume</span>      — open resume PDF
   <span class="t-bright">ls node_modules</span>  — don't do this
-  <span class="t-bright">play music</span>       — 🎵
   <span class="t-bright">send email</span>       — get in touch
   <span class="t-bright">lolcat</span>           — try it 🌈
   <span class="t-bright">sudo hire me</span>     — recommended
@@ -145,7 +144,7 @@ drwxr-xr-x  joystick-arcade-bar/     Pitch deck · Market research · Financial 
 drwxr-xr-x  this-portfolio/          <span class="t-dim">you are here</span>
 `,
 
-  'cat project1': () => `
+  'cat project-business': () => `
 <span class="t-bright">local-business-portal.exe</span>
 ─────────────────────────────────
 Name:    Local Business Portal
@@ -157,7 +156,7 @@ Status:  <span class="t-blue">● LIVE</span>
 → github.com/mayxbui
 `,
 
-  'cat project2': () => `
+  'cat project-college': () => `
 <span class="t-bright">college-selection-tool.exe</span>
 ─────────────────────────────────
 Name:    College Institution Selection Tool
@@ -168,7 +167,7 @@ Filters: Affordability · Academic competitiveness · Graduate earnings
 Status:  <span class="t-blue">● COMPLETE</span>
 `,
 
-  'cat project3': () => `
+  'cat project-joystick': () => `
 <span class="t-bright">joystick-arcade-bar.exe</span>
 ─────────────────────────────────
 Name:    JoyStick Arcade & Bar
@@ -181,7 +180,7 @@ Status:  <span class="t-yellow">● PITCH COMPLETE · SEEKING CO-FOUNDERS</span>
 `,
 
   'open resume': () => {
-    window.open('resume.pdf', '_blank');
+    window.open('May-CS-BA.pdf', '_blank');
     return `<span class="t-yellow">Opening resume.pdf...</span>
 <span class="t-dim">↳ If it didn't open, check your pop-up blocker.</span>
 
@@ -204,25 +203,6 @@ Scanning node_modules...
 
 <span class="t-dim">consider: rm -rf node_modules && go touch grass</span>
 `,
-
-  'play music': () => {
-    return `
-<span class="t-bright">♫ now playing...</span>
-─────────────────────────────────
-<span class="t-blue">lofi beats to debug at 2am to</span>
-
-  ♩ ♪  ♫ ♬  ♩ ♪  ♫ ♬
-
-  [████████████░░░░] 73% — coding session in progress
-
-Artist: Various
-Mood:   focused · caffeinated · shipping
-Vol:    ████████░░ 80%
-
-<span class="t-dim">Pro tip: headphones recommended for optimal performance</span>
-<span class="t-dim">Open: https://www.youtube.com/watch?v=jfKfPfyJRdk</span>
-`;
-  },
 
   'send email': () => `
 <span class="t-bright">Initiating handshake protocol...</span>
