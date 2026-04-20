@@ -1,97 +1,46 @@
-# portfolio — Windows 7 Boot Screen Edition
+# May Bui — Portfolio
 
-A personal portfolio with a Windows 7 boot screen aesthetic, scroll-triggered reveals,
-a hidden terminal easter egg, a BSOD overlay, and lolcat rainbow text.
+A Windows-themed developer portfolio with a boot sequence, interactive terminal, and hidden easter eggs.
 
-## Files
-
-```
-portfolio/
-├── index.html   — structure & content
-├── style.css    — all custom styles (monospace, BSOD, terminal, animations)
-├── main.js      — all interactivity (scroll, terminal, Konami, lolcat)
-└── README.md    — this file
-```
-
-## Deploy in 2 minutes
-
-### Option A — GitHub Pages (free)
-1. Push this folder to a GitHub repo
-2. Go to Settings → Pages → Deploy from branch → main / root
-3. Done. Live at `yourusername.github.io/repo-name`
-
-### Option B — Netlify (free, recommended)
-1. Drag this folder into netlify.com/drop
-2. Done. Instantly live with HTTPS.
-
-### Option C — Vercel (free)
-1. `npm i -g vercel`
-2. `cd portfolio && vercel`
-3. Done.
-
-No build step. No dependencies. Just static files.
+**Live site:** [may.vercel.app](https://may.vercel.app)
 
 ---
 
-## Customise
+## How to use
 
-### Your info (index.html)
-Search for these placeholders and replace them:
+### 1. Scroll to load
 
-| Placeholder         | Replace with                    |
-|---------------------|---------------------------------|
-| `YOUR NAME`         | your actual name                |
-| `yourhandle`        | your GitHub username            |
-| `yourname`          | your LinkedIn handle            |
-| `hello@youremail.com` | your email                   |
-| `Acme Corp`         | your actual employers           |
-| `project-one.exe`   | your actual project names       |
+The page boots like a Windows startup screen. Scroll down to reveal each section — the progress bar at the top tracks your position and cycles through loading labels as content appears.
 
-### Terminal commands (main.js)
-Add new commands to the `COMMANDS` object:
+### 2. Open the terminal
 
-```js
-'open github': () => `
-  Opening github.com/yourhandle...
-`,
+Any yellow-highlighted text is clickable and opens an interactive terminal overlay pre-loaded with a relevant command.
 
-'my stack': () => `
-  <span class="t-bright">Primary:</span> React, TypeScript, Node.js
-  <span class="t-bright">Secondary:</span> Python, PostgreSQL, AWS
-`,
-```
+### 3. Terminal commands
 
-### Sections (index.html)
-Add more sections by copying a `<section class="boot-section" id="sN">` block.
-Then add the ID to the `SECTIONS` array in `main.js`.
+Type any command and press `Enter`:
 
-### Colors (style.css)
-Change `--blue-accent` and `--blue-dark` for the progress bar color.
-Change `--bsod-blue` for the BSOD background.
-Change `--term-green` and family for the terminal color.
+| Command | Description |
+|---|---|
+| `help` | List all available commands |
+| `whoami` | About May Bui |
+| `neofetch` | System info, portfolio style |
+| `ls projects` | List all projects |
+| `cat project_name` | Project details |
+| `open resume` | Opens resume.pdf in a new tab |
+| `send email` | Contact information |
+| `sudo hire me` | Recommended !! |
+| `ls node_modules` | Don't |
+| `play music` | 🎵 |
+| `lolcat` | 🌈 |
+| `date` | Current date/time |
+| `uname -a` | System info |
+| `clear` | Clear terminal output |
+| `exit` | Close terminal |
 
----
+- Use `↑` / `↓` arrow keys to cycle through command history.
+- Press `ESC` to close the terminal at any time.
 
-## Easter eggs
+Press `ESC` or click the button at the bottom of the BSOD to dismiss it.
 
-| Trigger                    | Effect                        |
-|----------------------------|-------------------------------|
-| Scroll down                | Sections reveal + progress    |
-| Click any orange text      | Opens terminal with command   |
-| Type `lolcat` in terminal  | Rainbow text                  |
-| Type `sudo hire me`        | Fun response                  |
-| Konami code (↑↑↓↓←→←→BA)  | BSOD overlay                  |
-| Press ESC                  | Close BSOD or terminal        |
-| ↑/↓ in terminal            | Command history               |
-
----
-
-## Accessibility
-
-- Skip-to-content link (Tab on page load)
-- All interactive elements are keyboard accessible
-- ARIA roles and labels on overlays
-- Progress bar has aria-valuenow
-- Terminal output has aria-live region
-- Color contrast meets WCAG AA on core text
-- Glitch links use `<button>` not `<span>` — keyboard focusable
+> **Hint:** click the word "Konami code" at the very bottom of the page to reveal the sequence.
